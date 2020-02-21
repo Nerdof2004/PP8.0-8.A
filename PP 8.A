@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class TheSong {
+
+    public static void main(String args[]) {
+
+        List<String> days = new ArrayList<String>();
+
+        days.add(new String("A partridge in a pear tree."));
+        days.add(new String("Two turtle doves \n"));
+        days.add(new String("Three French hens \n"));
+        days.add(new String("Four calling birds \n" ));
+        days.add(new String("Five golden rings \n"));
+        days.add(new String("Six geese a-laying \n"));
+        days.add(new String("Seven swans a-swimming \n"));
+        days.add(new String("Eight maids a-milking, \n" ));
+        days.add(new String("Nine ladies dancing, \n"));
+        days.add(new String("Ten lords a-leaping, \n"));
+        days.add(new String("Eleven pipers piping, \n"));
+        days.add(new String("Twelve drummers drumming, \n"));
+
+       song(days, 0);// makes days start at 1
+
+    }
+
+    public static void song(List<String> days, int num) {
+
+        if(num == 12) //every time num goes up it returns the statement
+            return;
+
+        sing("On the " + (num + 1) + " day of christmas my true love gave to me!");
+
+        for(int x = 0; x < num + 1 ; x++)
+            sing(days.get(x));// repeats the statement including what is n the list
+
+        sing("\n");
+        song(days, num + 1);
+    }
+
+    public static void sing(Object o)
+    {
+        System.out.println(o.toString());// prints it out
+    }
+}
