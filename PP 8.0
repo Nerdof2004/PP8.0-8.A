@@ -1,0 +1,51 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Blurb
+{
+     public static String Whoozit()
+     {
+         Random r = new Random();
+         String result = "x";
+         int num = r.nextInt(9);
+         for (int i = 0; i < num; i++)
+         {
+           result += "y";
+         }
+         return result;
+         }
+         public static String Whatzit()
+         {
+            Random r = new Random();
+            String result = "q";
+            int num = r.nextInt(2);
+            if (num == 0)
+            {
+             result += "z";
+            }
+            else
+            {
+             result += "d";
+         }
+           result += Whoozit();
+           return result;
+     }// end of Whoozit
+
+ public static void main(String[] args)
+ {
+      String output = "";
+      int num;
+
+       Scanner keyboard = new Scanner(System.in);
+
+      System.out.println("Type in a number");
+      int n = keyboard. nextInt();
+
+  if (n > 0)
+      {
+       System.out.println(Whoozit());
+      }
+
+
+ }
+}
